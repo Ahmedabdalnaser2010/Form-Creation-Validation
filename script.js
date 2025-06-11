@@ -6,24 +6,24 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener("submit", function (e) {
         e.preventDefault()
 
-        const userNameValue = document.getElementById("username").value.trim()
-        const emailValue = document.getElementById("email").value.trim()
-        const passwordValue = document.getElementById("password").value.trim()
+        const username = document.getElementById("username").value.trim()
+        const email = document.getElementById("email").value.trim()
+        const password = document.getElementById("password").value.trim()
 
 
         // check username validition
 
         let isValid = true
         let messages = []
-        if (userNameValue.length < 3) {
+        if (username.length < 3) {
             isValid = false
             messages.push('Username must be at least 3 characters long.')
         }
-        if (!emailValue.split("").includes("@") || !emailValue.split("").includes(".")) {
+        if (!email.split("").includes("@") || !email.split("").includes(".")) {
             isValid = false
             messages.push('Please enter a valid email address.')
         }
-        if (passwordValue.length < 10) {
+        if (password.length < 10) {
             isValid = false
             messages.push('Password must be at least 6 characters long.')
         }
